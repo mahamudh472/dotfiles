@@ -1,11 +1,3 @@
-Here’s a **clean, practical README.md** you can copy-paste directly.
-It explains *what you’re doing*, *how to set it up*, and *why things work*, without being bloated.
-
-You can tweak names/paths later, but this is a **solid baseline** most experienced dotfile users are happy with.
-
----
-
-````md
 # Dotfiles
 
 Personal dotfiles managed using a **bare Git repository**.
@@ -103,5 +95,4 @@ On first run:
 * Different machines may use different subsets of configs
 * This repository is intended for personal use
 
-```
 

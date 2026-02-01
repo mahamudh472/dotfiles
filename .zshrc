@@ -124,4 +124,4 @@ alias py="python"
 alias pm="python manage.py"
 alias brave-browser-stable=/usr/local/bin/brave-lock
 export PATH="$HOME/.local/bin:$PATH"
-alias dot_manager='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'

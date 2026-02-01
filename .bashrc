@@ -130,3 +130,4 @@ alias cve="python3 -m venv env"
 
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+export PATH="$HOME/.local/bin:$PATH"

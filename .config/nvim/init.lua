@@ -17,9 +17,20 @@ vim.o.clipboard = "unnamedplus"
 -- Key bindings Example
 -- vim.keymap.set("n", "<Space>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
+-- =========================
+-- Lazy.nvim bootstrap
+-- =========================
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
-        print("lazy.vim not found!")
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable",
+    lazypath,
+  })
 end
 
 vim.opt.rtp:prepend(lazypath)

@@ -13,8 +13,7 @@ vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.o.clipboard = "unnamedplus"
 
-
-
+-- PWD
 
 -- Key bindings Example
 -- vim.keymap.set("n", "<Space>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
@@ -49,6 +48,18 @@ require("lazy").setup({
 require("config.keymaps")
 
 vim.cmd.colorscheme("catppuccin")
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory "} )
+-- vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory "} )
 
+
+
+
+
+if vim.fn.argc() == 1 then
+	vim.api.nvim_create_autocmd("VimEnter", {
+		pattern = "*",
+		callback = function()
+			vim.api.nvim_set_current_dir(vim.fn.expand("%:p:h"))
+		end,
+	})
+end
 

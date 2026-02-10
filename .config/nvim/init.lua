@@ -12,6 +12,23 @@ vim.opt.expandtab = true
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.o.clipboard = "unnamedplus"
+vim.opt.timeout = true
+vim.opt.timeoutlen = 200 
+vim.opt.ttimeoutlen = 0
+
+
+
+vim.api.nvim_create_autocmd("InsertEnter", {
+  callback = function()
+    vim.opt.timeout = false
+  end,
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+  callback = function()
+    vim.opt.timeout = true
+  end,
+})
 
 -- PWD
 

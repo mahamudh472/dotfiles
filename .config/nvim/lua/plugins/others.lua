@@ -75,6 +75,28 @@ return {
                         -- THE ONES YOU ASKED FOR: Searching Symbols (Classes/Functions)
                         vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = "Find Symbols (Current File)" })
                         vim.keymap.set('n', '<leader>fw', builtin.lsp_dynamic_workspace_symbols, { desc = "Find Symbols (Workspace/Project)" })
+
+                        vim.keymap.set('n', '<leader>gc', function()
+                                builtin.lsp_dynamic_workspace_symbols({
+                                        symbols = "class",
+                                        prompt_title = "Search Classes"
+                                })
+                        end, { desc = "Find Classes (Workspace)" })
+                        vim.keymap.set('n', '<leader>gf', function()
+                                builtin.lsp_dynamic_workspace_symbols({
+                                        symbols = {"function", "method"},
+                                        prompt_title = "Search Functions"
+                                })
+                        end, { desc = "Find Functions (Workspace)" })
+
+                        vim.keymap.set('n', '<leader>gu', function()
+                                builtin.live_grep({
+                                        default_text = "path\\(", 
+                                        prompt_title = "Django URL Routes",
+                                        -- Limits search to python files only
+                                        additional_args = function() return { "-t", "py" } end 
+                                })
+                        end, { desc = "Go to URL" })
                 end
         },
 }

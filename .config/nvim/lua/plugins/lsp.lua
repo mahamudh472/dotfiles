@@ -10,6 +10,7 @@ return {
         },
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
+                capabilities.offsetEncoding = { "utf-16" }
             local lspconfig = require("lspconfig")
 
             require("mason").setup()
@@ -44,6 +45,21 @@ return {
                     end,
                 },
             })
+                vim.diagnostic.config({
+                                virtual_text = true,
+                                signs = true,
+                                update_in_insert = false,
+                                underline = true,
+                                severity_sort = true,
+                                float = {
+                                    focusable = true,
+                                    style = "minimal",
+                                    border = "rounded",
+                                    source = "always",
+                                    header = "",
+                                    prefix = "",
+                                },
+                        })
         end,
     },    -- Completion (Keep your existing cmp config, but ensure these are present)
     { "hrsh7th/cmp-nvim-lsp" },

@@ -15,7 +15,18 @@ vim.o.clipboard = "unnamedplus"
 vim.opt.timeout = true
 vim.opt.timeoutlen = 200
 
-
+-- handle window title
+vim.opt.title = true
+local function set_title()
+        local cwd = vim.fn.getcwd()
+        local title = vim.fn.fnamemodify(cwd, ":t")
+        vim.opt.titlestring = cwd .. " - " .. title
+end
+vim.api.nvim_create_autocmd("DirChanged", {
+        pattern = "*",
+        callback = set_title,
+})
+set_title()
 
 -- PWD
 

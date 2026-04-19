@@ -132,3 +132,16 @@ bindkey -r "^[[B"
 bindkey -r "^[[5~"
 bindkey -r "^[[6~"
 alias nv="neovide --fork"
+
+# pnpm
+export PNPM_HOME="/home/mahmud/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+runc() {
+    gcc "$1.c" -o "$1" && ./"$1"
+}
+alias ngrok1='ngrok --config ~/.config/ngrok/ngrok_account1.yml'
+alias ngrok2='ngrok --config ~/.config/ngrok/ngrok_account2.yml'

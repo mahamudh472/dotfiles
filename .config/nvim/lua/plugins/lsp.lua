@@ -16,7 +16,7 @@ return {
             require("mason").setup()
             require("mason-lspconfig").setup({
                 -- Use basedpyright instead of pyright for better Django support
-                ensure_installed = { "lua_ls", "basedpyright" },
+                ensure_installed = { "lua_ls", "basedpyright", "clangd" },
                 handlers = {
                     -- Default handler for all servers
                     function(server_name)
@@ -40,6 +40,18 @@ return {
                                         diagnosticMode = "openFilesOnly",
                                     },
                                 },
+                            },
+                        })
+                    end,
+                    ["clangd"] = function()
+                        lspconfig.clangd.setup({
+                            capabilities = capabilities,
+                            cmd = {
+                                "clangd",
+                                "--background-index",
+                                "--clang-tidy",
+                                "--completion-style=detailed",
+                                "--header-insertion=never",
                             },
                         })
                     end,

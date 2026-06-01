@@ -111,7 +111,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias cve="python3 -m venv env"
-alias ave="source env/bin/activate"
+alias ave="source .venv/bin/activate"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -145,3 +145,9 @@ runc() {
 }
 alias ngrok1='ngrok --config ~/.config/ngrok/ngrok_account1.yml'
 alias ngrok2='ngrok --config ~/.config/ngrok/ngrok_account2.yml'
+
+
+export ANTHROPIC_AUTH_TOKEN=ollama
+export ANTHROPIC_API_KEY=""
+export ANTHROPIC_BASE_URL=http://localhost:11434
+export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1

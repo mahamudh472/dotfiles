@@ -146,8 +146,13 @@ runc() {
 alias ngrok1='ngrok --config ~/.config/ngrok/ngrok_account1.yml'
 alias ngrok2='ngrok --config ~/.config/ngrok/ngrok_account2.yml'
 
-
+# Calude code CLI conf
 export ANTHROPIC_AUTH_TOKEN=ollama
 export ANTHROPIC_API_KEY=""
 export ANTHROPIC_BASE_URL=http://localhost:11434
 export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
+
+# IBus conf
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus

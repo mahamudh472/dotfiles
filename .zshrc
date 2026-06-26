@@ -110,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias cve="python3 -m venv env"
+alias cve="uv venv"
 alias ave="source .venv/bin/activate"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

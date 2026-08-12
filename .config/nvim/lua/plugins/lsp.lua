@@ -3,6 +3,13 @@ return {
     -- LSP Support
         {
         "neovim/nvim-lspconfig",
+        keys = {
+            {
+                "<leader>lR",
+                "<cmd>LspRestart<CR>",
+                desc = "Restart LSP",
+            },
+        },
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",

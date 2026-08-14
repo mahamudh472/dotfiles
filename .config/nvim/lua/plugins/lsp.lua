@@ -3,13 +3,13 @@ return {
     -- LSP Support
         {
         "neovim/nvim-lspconfig",
-        keys = {
-            {
-                "<leader>lR",
-                "<cmd>LspRestart<CR>",
-                desc = "Restart LSP",
-            },
-        },
+        -- keys = {
+        --     {
+        --         "<leader>lR",
+        --         "<cmd>LspRestart<CR>",
+        --         desc = "Restart LSP",
+        --     },
+        -- },
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
@@ -19,6 +19,10 @@ return {
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
                 capabilities.offsetEncoding = { "utf-16" }
             local lspconfig = require("lspconfig")
+
+            vim.keymap.set("n", "<leader>lR", "<cmd>LspRestart<CR>", {
+                desc = "Restart LSP",
+            })
 
             require("mason").setup()
             require("mason-lspconfig").setup({

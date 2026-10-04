@@ -24,10 +24,16 @@ return {
                 desc = "Restart LSP",
             })
 
-            require("mason").setup()
+            require("mason").setup(
+                {
+                    ensure_installed = {
+                        "debugpy",
+                    },
+                }
+            )
             require("mason-lspconfig").setup({
                 -- Use basedpyright instead of pyright for better Django support
-                ensure_installed = { "lua_ls", "basedpyright", "clangd" },
+                ensure_installed = { "lua_ls", "basedpyright", "clangd", },
                 handlers = {
                     -- Default handler for all servers
                     function(server_name)

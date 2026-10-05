@@ -156,3 +156,6 @@ export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
+
+# opencode
+export PATH=/home/mahmud/.opencode/bin:$PATH
